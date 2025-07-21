@@ -1,0 +1,1556 @@
+
+<!DOCTYPE html>
+
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>سید فردین شریعتی - رزومه</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap');
+
+* {
+
+margin: 0;
+
+padding: 0;
+
+box-sizing: border-box;
+
+}
+
+
+body {
+
+font-family: 'Vazirmatn', sans-serif;
+
+line-height: 1.6;
+
+color: #ffffff;
+
+background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #000000 100%);
+
+min-height: 100vh;
+
+overflow-x: hidden;
+
+}
+
+.container {
+
+max-width: 900px;
+
+margin: 0 auto;
+
+padding: 20px;
+
+}
+
+/* Notification styles */
+
+.notification {
+
+position: fixed;
+
+top: 20px;
+
+right: 20px;
+
+background: linear-gradient(135deg, #27ae60, #219a52);
+
+color: white;
+
+padding: 15px 25px;
+
+border-radius: 10px;
+
+box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
+
+z-index: 1000;
+
+transform: translateY(-100px);
+
+opacity: 0;
+
+transition: all 0.3s ease;
+
+font-weight: 500;
+
+}
+
+
+.notification.show {
+
+transform: translateY(0);
+
+opacity: 1;
+
+}
+
+.notification::before {
+
+content: '✓';
+
+margin-left: 10px;
+
+font-weight: bold;
+
+}
+
+/* Header Section */
+
+.header {
+
+background: linear-gradient(135deg, #000000, #2d2d2d, #27ae60);
+
+color: white;
+
+padding: 60px 40px;
+
+border-radius: 20px 20px 0 0;
+
+text-align: center;
+
+position: relative;
+
+overflow: hidden;
+
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+}
+
+.header::before {
+
+content: '';
+
+position: absolute;
+
+top: 0;
+
+left: 0;
+
+right: 0;
+
+bottom: 0;
+
+background: repeating-linear-gradient(
+
+45deg,
+
+transparent,
+
+transparent 2px,
+
+rgba(255, 255, 255, 0.05) 2px,
+
+rgba(255, 255, 255, 0.05) 4px
+
+);
+
+}
+
+.profile-content {
+
+position: relative;
+
+z-index: 2;
+
+}
+
+.profile-picture {
+
+width: 150px;
+
+height: 150px;
+
+border-radius: 50%;
+
+margin: 0 auto 20px;
+
+border: 4px solid #27ae60;
+
+overflow: hidden;
+
+box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
+
+background: #2d2d2d;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+font-size: 3em;
+
+color: #27ae60;
+
+}
+
+.profile-picture img {
+
+width: 100%;
+
+height: 100%;
+
+object-fit: cover;
+
+}
+
+.name {
+
+font-size: 3.2em;
+
+font-weight: 700;
+
+margin-bottom: 15px;
+
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+animation: fadeInUp 1s ease-out;
+
+color: #ffffff;
+
+}
+
+.title {
+
+font-size: 1.5em;
+
+font-weight: 400;
+
+margin-bottom: 30px;
+
+opacity: 0.95;
+
+animation: fadeInUp 1s ease-out 0.2s both;
+
+color: #ffffff;
+
+}
+
+.contact-grid {
+
+display: grid;
+
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+gap: 15px;
+
+margin-top: 20px;
+
+}
+
+.contact-item {
+
+display: flex;
+
+align-items: center;
+
+gap: 10px;
+
+background: rgba(255, 255, 255, 0.1);
+
+padding: 12px 20px;
+
+border-radius: 25px;
+
+backdrop-filter: blur(10px);
+
+
+border: 1px solid rgba(255, 255, 255, 0.2);
+
+transition: all 0.3s ease;
+
+animation: fadeInUp 1s ease-out 0.4s both;
+
+color: #ffffff;
+
+cursor: pointer;
+
+}
+
+.contact-item:hover {
+
+background: rgba(39, 174, 96, 0.2);
+
+transform: translateY(-2px);
+
+}
+
+.contact-item a {
+
+color: inherit;
+
+text-decoration: none;
+
+display: flex;
+
+align-items: center;
+
+
+gap: 10px;
+
+width: 100%;
+
+}
+
+.contact-item.no-copy {
+
+cursor: default;
+
+}
+
+.contact-item.no-copy:hover {
+
+transform: none;
+
+}
+
+.contact-icon {
+
+font-size: 1.2em;
+
+width: 24px;
+
+text-align: center;
+
+}
+
+.copy-text {
+
+
+flex: 1;
+
+user-select: all;
+
+cursor: text;
+
+}
+
+/* Main Content */
+
+.main-content {
+
+background: #1a1a1a;
+
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+border-radius: 0 0 20px 20px;
+
+}
+
+.section {
+
+padding: 40px;
+
+border-bottom: 1px solid #333333;
+
+}
+
+.section:last-child {
+
+
+border-bottom: none;
+
+border-radius: 0 0 20px 20px;
+
+}
+
+.section-title {
+
+font-size: 2em;
+
+font-weight: 600;
+
+color: #ffffff;
+
+margin-bottom: 30px;
+
+text-align: center;
+
+position: relative;
+
+padding-bottom: 15px;
+
+}
+
+.section-title::after {
+
+content: '';
+
+position: absolute;
+
+
+bottom: 0;
+
+left: 50%;
+
+transform: translateX(-50%);
+
+width: 60px;
+
+height: 4px;
+
+background: linear-gradient(90deg, #27ae60, #ffffff);
+
+border-radius: 2px;
+
+}
+
+/* Work Experience */
+
+.experience-item {
+
+background: #2d2d2d;
+
+padding: 25px;
+
+border-radius: 15px;
+
+margin-bottom: 20px;
+
+border-right: 5px solid #27ae60;
+
+transition: all 0.3s ease;
+
+position: relative;
+
+}
+
+.experience-item:hover {
+
+transform: translateX(10px);
+
+box-shadow: 0 8px 25px rgba(39, 174, 96, 0.15);
+
+}
+
+.job-title {
+
+font-size: 1.4em;
+
+font-weight: 600;
+
+color: #ffffff;
+
+margin-bottom: 8px;
+
+}
+
+.company {
+
+
+color: #cccccc;
+
+font-weight: 500;
+
+margin-bottom: 8px;
+
+font-size: 1.1em;
+
+}
+
+.date {
+
+background: linear-gradient(45deg, #27ae60, #000000);
+
+color: white;
+
+padding: 6px 15px;
+
+border-radius: 20px;
+
+font-size: 0.9em;
+
+display: inline-block;
+
+margin-bottom: 15px;
+
+font-weight: 500;
+
+}
+
+.description {
+
+color: #ffffff;
+
+line-height: 1.7;
+
+font-size: 1.05em;
+
+}
+
+/* Education */
+
+.education-item {
+
+background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+
+padding: 25px;
+
+border-radius: 15px;
+
+border: 2px solid #333333;
+
+text-align: center;
+
+transition: all 0.3s ease;
+
+}
+
+
+.education-item:hover {
+
+border-color: #27ae60;
+
+transform: translateY(-5px);
+
+box-shadow: 0 10px 30px rgba(39, 174, 96, 0.15);
+
+}
+
+.degree {
+
+font-size: 1.5em;
+
+font-weight: 600;
+
+color: #ffffff;
+
+margin-bottom: 10px;
+
+}
+
+.university {
+
+color: #cccccc;
+
+font-size: 1.1em;
+
+margin-bottom: 15px;
+
+}
+
+.gpa {
+
+background: linear-gradient(45deg, #27ae60, #000000);
+
+color: white;
+
+padding: 8px 20px;
+
+border-radius: 25px;
+
+font-size: 1em;
+
+font-weight: 600;
+
+display: inline-block;
+
+margin-top: 10px;
+
+}
+
+/* Skills */
+
+.skills-grid {
+
+display: grid;
+
+
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+gap: 25px;
+
+}
+
+.skill-item {
+
+background: #2d2d2d;
+
+padding: 20px;
+
+border-radius: 15px;
+
+border-right: 4px solid #27ae60;
+
+transition: all 0.3s ease;
+
+}
+
+.skill-item:hover {
+
+transform: translateY(-3px);
+
+box-shadow: 0 8px 25px rgba(39, 174, 96, 0.15);
+
+}
+
+
+.skill-header {
+
+display: flex;
+
+justify-content: space-between;
+
+align-items: center;
+
+margin-bottom: 12px;
+
+}
+
+.skill-name {
+
+font-weight: 600;
+
+color: #ffffff;
+
+font-size: 1.1em;
+
+}
+
+.skill-level {
+
+background: linear-gradient(45deg, #27ae60, #000000);
+
+color: white;
+
+padding: 4px 12px;
+
+border-radius: 15px;
+
+font-size: 0.8em;
+
+font-weight: 500;
+
+}
+
+.skill-bar {
+
+height: 8px;
+
+background: #333333;
+
+border-radius: 4px;
+
+overflow: hidden;
+
+position: relative;
+
+}
+
+.skill-progress {
+
+height: 100%;
+
+background: linear-gradient(90deg, #27ae60, #000000);
+
+
+border-radius: 4px;
+
+transition: width 2s ease-in-out;
+
+position: relative;
+
+width: 0%;
+
+}
+
+.skill-progress::after {
+
+content: '';
+
+position: absolute;
+
+top: 0;
+
+left: 0;
+
+right: 0;
+
+bottom: 0;
+
+background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+
+animation: shine 2s infinite;
+
+
+}
+
+@keyframes shine {
+
+0% { transform: translateX(-100%); }
+
+100% { transform: translateX(100%); }
+
+}
+
+/* Courses */
+
+.course-item {
+
+background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+
+padding: 25px;
+
+border-radius: 15px;
+
+margin-bottom: 20px;
+
+border: 2px solid #333333;
+
+transition: all 0.3s ease;
+
+}
+
+.course-item:hover {
+
+border-color: #27ae60;
+
+box-shadow: 0 8px 25px rgba(39, 174, 96, 0.15);
+
+}
+
+/* Certificates */
+
+.certificate-item {
+
+background: #000000;
+
+color: white;
+
+padding: 25px;
+
+border-radius: 15px;
+
+margin-bottom: 20px;
+
+position: relative;
+
+overflow: hidden;
+
+transition: all 0.3s ease;
+
+border: 2px solid #27ae60;
+
+
+}
+
+.certificate-item::before {
+
+content: '';
+
+position: absolute;
+
+top: 0;
+
+left: 0;
+
+right: 0;
+
+bottom: 0;
+
+background: linear-gradient(45deg, #27ae60, transparent, #27ae60);
+
+opacity: 0.1;
+
+}
+
+.certificate-item:hover {
+
+transform: translateY(-5px);
+
+box-shadow: 0 15px 40px rgba(39, 174, 96, 0.3);
+
+
+}
+
+.certificate-content {
+
+position: relative;
+
+z-index: 2;
+
+}
+
+.download-btn {
+
+display: inline-flex;
+
+align-items: center;
+
+gap: 10px;
+
+background: #27ae60;
+
+color: white;
+
+padding: 12px 25px;
+
+border-radius: 25px;
+
+text-decoration: none;
+
+font-weight: 600;
+
+
+margin-top: 15px;
+
+transition: all 0.3s ease;
+
+border: none;
+
+cursor: pointer;
+
+}
+
+.download-btn:hover {
+
+background: #219a52;
+
+transform: translateY(-2px);
+
+box-shadow: 0 8px 20px rgba(39, 174, 96, 0.4);
+
+}
+
+/* Languages */
+
+.languages-container {
+
+display: flex;
+
+justify-content: center;
+
+gap: 20px;
+
+
+}
+
+.language-item {
+
+background: linear-gradient(135deg, #27ae60, #000000);
+
+color: white;
+
+padding: 15px 30px;
+
+border-radius: 30px;
+
+font-weight: 600;
+
+font-size: 1.1em;
+
+text-align: center;
+
+transition: all 0.3s ease;
+
+}
+
+.language-item:hover {
+
+transform: scale(1.05);
+
+box-shadow: 0 8px 20px rgba(39, 174, 96, 0.3);
+
+}
+
+/* Personality Tests */
+
+.personality-tests {
+
+display: grid;
+
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+gap: 25px;
+
+}
+
+.personality-item {
+
+background: linear-gradient(135deg, #000000, #2d2d2d);
+
+color: white;
+
+padding: 30px;
+
+border-radius: 15px;
+
+text-align: center;
+
+transition: all 0.3s ease;
+
+border: 2px solid #27ae60;
+
+}
+
+.personality-item:hover {
+
+transform: translateY(-5px);
+
+box-shadow: 0 15px 40px rgba(39, 174, 96, 0.3);
+
+}
+
+.test-type {
+
+font-weight: 600;
+
+margin-bottom: 15px;
+
+font-size: 1.3em;
+
+color: #27ae60;
+
+}
+
+.test-result {
+
+font-size: 1.1em;
+
+line-height: 1.6;
+
+
+color: #ffffff;
+
+}
+
+/* About Me */
+
+.about-content {
+
+background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+
+padding: 30px;
+
+border-radius: 15px;
+
+border: 2px solid #333333;
+
+font-size: 1.1em;
+
+line-height: 1.8;
+
+color: #ffffff;
+
+text-align: justify;
+
+}
+
+/* Animations */
+
+@keyframes fadeInUp {
+
+from {
+
+opacity: 0;
+
+transform: translateY(30px);
+
+}
+
+to {
+
+opacity: 1;
+
+transform: translateY(0);
+
+}
+
+}
+
+.fade-in {
+
+animation: fadeInUp 0.8s ease-out;
+
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+
+.container {
+
+padding: 10px;
+
+}
+
+.header {
+
+padding: 40px 20px;
+
+}
+
+.name {
+
+font-size: 2.5em;
+
+}
+
+.section {
+
+padding: 30px 20px;
+
+}
+
+.contact-grid {
+
+grid-template-columns: 1fr;
+
+}
+
+.skills-grid {
+
+grid-template-columns: 1fr;
+
+}
+
+.languages-container {
+
+flex-direction: column;
+
+align-items: center;
+
+}
+
+.skill-header {
+
+flex-direction: column;
+
+align-items: flex-start;
+
+gap: 8px;
+
+}
+
+.notification {
+
+right: 10px;
+
+left: 10px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Notification element -->
+
+<div id="notification" class="notification"></div>
+
+<div class="container">
+
+<!-- Header Section -->
+
+<div class="header">
+
+<div class="profile-content">
+
+<div class="profile-picture">
+
+<!-- Add your profile picture here -->
+
+<img src="IMG_20250425_212027_5221.jpg" alt="پروفایل">
+
+</div>
+
+<h1 class="name">سید فردین شریعتی</h1>
+
+<p class="title"> کارشناس it</p>
+
+<div class="contact-grid">
+
+<div class="contact-item" onclick="copyToClipboard('fardinshariati13@gmail.com', 'ایمیل کپی شد')">
+
+<span class="contact-icon">📧</span>
+
+<span class="copy-text">fardinshariati13@gmail.com</span>
+
+</div>
+
+<div class="contact-item" onclick="copyToClipboard('09944951549', 'شماره تلفن کپی شد')">
+
+<span class="contact-icon">📱</span>
+
+<span class="copy-text">09944951549</span>
+
+</div>
+
+
+<div class="contact-item" onclick="copyToClipboard('https://instagram.com/fardin_shariatie', 'لینک اینستاگرام کپی شد')">
+
+<a href="https://instagram.com/fardin_shariatie" target="_blank">
+
+<span class="contact-icon">📷</span>
+
+<span>fardin_shariatie</span>
+
+</a>
+
+</div>
+
+<div class="contact-item" onclick="copyToClipboard('https://t.me/fardin_shariatie', 'لینک تلگرام کپی شد')">
+
+<a href="https://t.me/fardin_shariatie" target="_blank">
+
+<span class="contact-icon">📨</span>
+
+<span>@fardin_shariatie</span>
+
+</a>
+
+</div>
+
+<div class="contact-item no-copy">
+
+<span class="contact-icon">📍</span>
+
+<span>اصفهان، خیابان امام خمینی، خیابان امام رضا</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="main-content">
+
+<!-- Work Experience Section -->
+
+<div class="section">
+
+<h2 class="section-title">تجربه کاری</h2>
+
+<div class="experience-item fade-in">
+
+<div class="job-title">دانشجوی کارآموز</div>
+
+<div class="company">شرکت پتروشیمی نفت 
+
+اصفهان</div>
+
+<div class="date">۱۴۰۳/۰۴ - ۱۴۰۳/۰۶</div>
+
+<div class="description">
+
+در طی مدت کارآموزی مطالبی مثل Linux، MySQL، شبکه، SQL Server آموختم و یک پروژه فرانت‌اند با HTML، CSS و JavaScript کار کردم.
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Education Section -->
+
+<div class="section">
+
+<h2 class="section-title">تحصیلات</h2>
+
+<div class="education-item fade-in">
+
+<div class="degree">کارشناسی IT</div>
+
+<div class="university">دانشگاه آزاد اسلامی خمینی‌شهر</div>
+
+<div class="date">۱۴۰۰/۰۷ - اکنون</div>
+
+
+<div class="gpa">معدل: ۱۸.۱۸</div>
+
+</div>
+
+</div>
+
+<!-- Skills Section -->
+
+<div class="section">
+
+<h2 class="section-title">مهارت‌ها</h2>
+
+<div class="skills-grid" id="skillsContainer">
+
+<!-- Skills will be generated by JavaScript -->
+
+</div>
+
+</div>
+
+<!-- Courses Section -->
+
+<div class="section">
+
+<h2 class="section-title">دوره‌ها</h2>
+
+<div class="course-item fade-in">
+
+<div class="job-title">WebAPIs با ASP.NET Core</div>
+
+<div class="company">سایت Toplearn</div>
+
+<div class="date">۱۴۰۳/۱۱ - ۱۴۰۴/۰۴</div>
+
+<div class="description">دوره را به صورت آنلاین در سایت Toplearn گذراندم</div>
+
+</div>
+
+<div class="course-item fade-in">
+
+<div class="job-title">دوره تخصصی مشاوره تحصیلی</div>
+
+<div class="company">موسسه بنیاد سنجش</div>
+
+<div class="date">۱۴۰۳/۱۲ - ۱۴۰۴/۰۱</div>
+
+<div class="description">دوره را به صورت غیرحضوری در موسسه بنیاد سنجش گذراندم</div>
+
+</div>
+
+</div>
+
+<!-- Certificates Section -->
+
+<div class="section">
+
+
+<h2 class="section-title">گواهینامه‌ها</h2>
+
+<div class="certificate-item fade-in">
+
+<div class="certificate-content">
+
+<div class="job-title">پایان دوره تخصصی مشاوره تحصیلی</div>
+
+<div class="company">بنیاد سنجش</div>
+
+<div class="date">۱۴۰۴/۰۲ - بدون انقضا</div>
+
+<a href="09944951549.pdf" download="گواهی_پایان_دوره_تخصص_مشاوره.pdf" class="download-btn" onclick="showNotification('گواهینامه با موفقیت دانلود شد')">
+
+<span>📄</span>
+
+دانلود گواهینامه
+
+</a>
+
+</div>
+
+</div>
+
+<div class="certificate-item fade-in">
+
+<div class="certificate-content">
+
+<div class="job-title">پایان دوره WebAPIs با ASP.NET Core</div>
+
+<div class="company">سایت toplearn</div>
+
+<div class="date">۱۴۰۴/۰۴ - بدون انقضا</div>
+
+<a href="42162.pdf" download="گواهی_پایان_دوره_ASP.NET_Core.pdf" class="download-btn" onclick="showNotification('گواهینامه با موفقیت دانلود شد')">
+
+<span>📄</span>
+
+دانلود گواهینامه
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Languages Section -->
+
+
+<div class="section">
+
+<h2 class="section-title">زبان‌های خارجی</h2>
+
+<div class="languages-container">
+
+<div class="language-item fade-in">انگلیسی</div>
+
+</div>
+
+</div>
+
+<!-- Personality Tests Section -->
+
+<div class="section">
+
+<h2 class="section-title">تست‌های شخصیت‌شناسی و هوش</h2>
+
+<div class="personality-tests">
+
+<div class="personality-item fade-in">
+
+<div class="test-type">تست شخصیت‌شناسی MBTI</div>
+
+<div class="test-result">شخصیت رهبری رشد (ENFJ-A) از گروه شخصیت سیاستمداران</div>
+
+
+</div>
+
+<div class="personality-item fade-in">
+
+<div class="test-type">تست هوش Raven IQ</div>
+
+<div class="test-result">نمره بهره هوش: ۱۳۱ - نتیجه آزمون: نابغه</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- About Me Section -->
+
+<div class="section">
+
+<h2 class="section-title">درباره من</h2>
+
+<div class="about-content fade-in">
+
+<p>من یک فرد بسیار اجتماعی و شنونده بسیار خوبی هستم. کار گروهی را به کار انفرادی ترجیح می‌دهم و تمام سعیم را می‌کنم تا بتوانم انتظاراتی که از من دارند به خوبی برآورده کنم و وظایفی که دارم را به خوبی انجام دهم.</p>
+
+<br>
+
+<p>یادگیری سریع و خوب دارم و همیشه از یادگیری مطالب جدید استقبال می‌کنم. همچنین توانایی و درک حل مسئله را نیز دارم.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+// Skills data with proficiency levels
+
+const skills = [
+
+{ name: 'C#', percentage: 85, level: 'حرفه‌ای' },
+
+{ name: 'Java', percentage: 75, level: 'پیشرفته' },
+
+{ name: 'JavaScript', percentage: 80, level: 'حرفه‌ای' },
+
+{ name: 'HTML5', percentage: 90, level: 'خبره' },
+
+
+{ name: 'CSS', percentage: 85, level: 'حرفه‌ای' },
+
+{ name: 'Vue.js', percentage: 70, level: 'پیشرفته' },
+
+{ name: 'ASP.NET Core', percentage: 80, level: 'حرفه‌ای' },
+
+{ name: 'Node.js API', percentage: 65, level: 'متوسط' },
+
+{ name: 'MySQL', percentage: 75, level: 'پیشرفته' },
+
+{ name: 'SQL Server', percentage: 80, level: 'حرفه‌ای' },
+
+{ name: 'Linux Desktop', percentage: 70, level: 'پیشرفته' },
+
+{ name: 'تایپ سریع', percentage: 95, level: 'خبره' },
+
+{ name: 'مشاور تحصیلی', percentage: 60, level: 'متوسط' }
+
+];
+
+// Show notification function
+
+function showNotification(message) {
+
+const notification = document.getElementById('notification');
+
+notification.textContent = message;
+
+notification.classList.add('show');
+
+setTimeout(() => {
+
+notification.classList.remove('show');
+
+}, 2500);
+
+}
+
+// Generate skills dynamically
+
+function generateSkills() {
+
+const container = document.getElementById('skillsContainer');
+
+container.innerHTML = ''; // Clear existing content
+
+skills.forEach((skill, index) => {
+
+
+const skillItem = document.createElement('div');
+
+skillItem.className = 'skill-item fade-in';
+
+skillItem.style.animationDelay = `${index * 0.1}s`;
+
+skillItem.innerHTML = `
+
+<div class="skill-header">
+
+<div class="skill-name">${skill.name}</div>
+
+<div class="skill-level">${skill.level}</div>
+
+</div>
+
+<div class="skill-bar">
+
+<div class="skill-progress" data-width="${skill.percentage}%"></div>
+
+</div>
+
+`;
+
+container.appendChild(skillItem);
+
+});
+
+}
+
+// Animate skill bars when they come into view
+
+function animateSkillBars() {
+
+const observer = new IntersectionObserver((entries) => {
+
+entries.forEach(entry => {
+
+if (entry.isIntersecting) {
+
+const progressBar = entry.target.querySelector('.skill-progress');
+
+if (progressBar && !progressBar.classList.contains('animated')) {
+
+const width = progressBar.getAttribute('data-width');
+
+setTimeout(() => {
+
+progressBar.style.width = width;
+
+progressBar.classList.add('animated');
+
+
+}, 500);
+
+}
+
+observer.unobserve(entry.target);
+
+}
+
+});
+
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.skill-item').forEach(item => {
+
+observer.observe(item);
+
+});
+
+}
+
+// Copy to clipboard function with custom message
+
+function copyToClipboard(text, message) {
+
+navigator.clipboard.writeText(text).then(function() {
+
+showNotification(message);
+
+}).catch(function(err) {
+
+console.error('Failed to copy text: ', err);
+
+showNotification('خطا در کپی کردن');
+
+});
+
+}
+
+// Smooth scrolling animation for elements
+
+function addScrollAnimations() {
+
+const observer = new IntersectionObserver((entries) => {
+
+entries.forEach(entry => {
+
+if (entry.isIntersecting) {
+
+entry.target.classList.add('fade-in');
+
+}
+
+});
+
+}, {
+
+
+threshold: 0.1,
+
+rootMargin: '0px 0px -50px 0px'
+
+});
+
+document.querySelectorAll('.fade-in').forEach(el => {
+
+observer.observe(el);
+
+});
+
+}
+
+// Initialize everything when DOM is loaded
+
+document.addEventListener('DOMContentLoaded', function() {
+
+generateSkills();
+
+// Small delay to ensure DOM is fully ready
+
+setTimeout(() => {
+
+animateSkillBars();
+
+addScrollAnimations();
+
+
+}, 200);
+
+});
+
+</script>
+
+</body>
+
+</html>
